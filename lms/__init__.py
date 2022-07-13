@@ -1,3 +1,4 @@
+#for setting up the application
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
