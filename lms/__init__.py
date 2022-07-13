@@ -12,3 +12,5 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///librarymanagementsystem.sqlite'
 
     db.init_app(app)
+
+    return app
