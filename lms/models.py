@@ -23,6 +23,8 @@ class BookDetails(UserMixin, db.Model):
     tapeNumber = db.Column(db.String(8), nullable = False)
     #shelf number
     shelfNumber = db.Column(db.String(12), nullable = False)
+    #creating a one to many relationship
+    borrowerName = db.relationship('BorrowerDetails', backref='BookDetails')
 
 #table for the borrower details
 class BorrowerDetails(UserMixin, db.Model):
@@ -38,4 +40,5 @@ class BorrowerDetails(UserMixin, db.Model):
     tapeNumber = db.Column(db.String(8), nullable = False)
     #date of issue
     dateOfIssue = db.Column(db.Text, nullable = False)
-    
+    #creating foreign key to link the book details table
+    bookID = db.Column(db.String, db.ForeignKey('BookDetails.bookID'))
