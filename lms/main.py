@@ -8,7 +8,7 @@ main = Blueprint('main', __name__)
 #route for the landing page
 @main.route('/')
 def index():
-    return 'Index'
+    return redirect(url_for('auth.login'))
 
 @main.route('/home')
 def homePage():
